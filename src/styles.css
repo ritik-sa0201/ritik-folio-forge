@@ -4,6 +4,38 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --color-bg: #0a0a0a;
+  --color-surface: #111111;
+  --color-accent: #e8ff47;
+  --color-line: #1f1f1f;
+  --color-muted: #5a5a5a;
+  --color-ink: #ffffff;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-label: "Space Mono", ui-monospace, monospace;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes scrollDot {
+  0% { transform: translateY(-100%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+html { scroll-behavior: smooth; background: #0a0a0a; }
+body {
+  background: #0a0a0a;
+  color: #ffffff;
+  font-family: "DM Mono", ui-monospace, monospace;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #e8ff47; color: #0a0a0a; }
+
 /*
  * Design system definition.
  *
