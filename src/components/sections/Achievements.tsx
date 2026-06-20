@@ -1,15 +1,35 @@
 import { motion } from "framer-motion";
 import { resume } from "@/data/resume";
 import { SectionLabel } from "@/components/SectionLabel";
+import { BgWord } from "@/components/BgWord";
+import { Counter } from "@/components/Counter";
 
 export function Achievements() {
   return (
-    <section id="achievements" className="px-6 md:px-10 py-32 border-t border-line">
+    <section id="achievements" className="relative px-6 md:px-10 py-32 border-t border-line overflow-hidden">
+      <BgWord align="left">CODE</BgWord>
+      <div className="relative z-10">
       <div className="mb-16">
         <SectionLabel index="05" name="Achievements" />
         <h2 className="font-display font-bold text-5xl md:text-7xl mt-4 leading-none">
           Receipts.
         </h2>
+      </div>
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-y border-line py-10">
+        {[
+          { v: 2024, label: "LeetCode Rating" },
+          { v: 1650, label: "Problems Solved", suffix: "+" },
+          { v: 50000, label: "Solution Views", suffix: "+" },
+          { v: 302, label: "Codolio Rank" },
+        ].map((m) => (
+          <div key={m.label} className="flex flex-col gap-2">
+            <div className="font-display font-bold text-4xl md:text-6xl text-accent tabular-nums">
+              <Counter to={m.v} suffix={m.suffix ?? ""} />
+            </div>
+            <div className="font-label text-[10px] uppercase tracking-[0.25em] text-muted">{m.label}</div>
+          </div>
+        ))}
       </div>
 
       <div>
@@ -33,6 +53,7 @@ export function Achievements() {
             </div>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageReveal } from "@/components/PageReveal";
 import { Navbar } from "@/components/Navbar";
+import { GridGuides } from "@/components/GridGuides";
+import { GrainOverlay } from "@/components/GrainOverlay";
+import { ScrollRail } from "@/components/ScrollRail";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
@@ -26,8 +29,11 @@ function Index() {
   return (
     <PageReveal>
       <div className="min-h-screen bg-bg text-ink overflow-x-hidden">
+        <GridGuides />
+        <GrainOverlay />
+        <ScrollRail />
         <Navbar />
-        <main>
+        <main className="relative z-10">
           <Hero />
           <About />
           <Experience />

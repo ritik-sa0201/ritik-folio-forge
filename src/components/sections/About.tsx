@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import { resume, sectionVariants } from "@/data/resume";
 import { SectionLabel } from "@/components/SectionLabel";
 import { Marquee } from "@/components/Marquee";
+import { BgWord } from "@/components/BgWord";
 
 export function About() {
   return (
-    <section id="about" className="relative px-6 md:px-10 py-32 border-t border-line">
+    <section id="about" className="relative px-6 md:px-10 py-32 border-t border-line overflow-hidden">
+      <BgWord align="left">ABOUT</BgWord>
+      <div className="relative z-10">
       <motion.div
         variants={sectionVariants}
         initial="hidden"
@@ -48,6 +51,7 @@ export function About() {
 
       <div className="mt-24 -mx-6 md:-mx-10">
         <Marquee items={resume.currently} />
+      </div>
       </div>
     </section>
   );
