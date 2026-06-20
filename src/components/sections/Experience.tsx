@@ -30,15 +30,28 @@ export function Experience() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
-              className="relative pl-8 border-l border-line"
+              className="relative pl-8"
             >
               <motion.span
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-                className="absolute -left-[5px] top-0 w-[9px] h-[9px] bg-accent origin-top"
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute left-0 top-0 bottom-0 w-px bg-line origin-top"
               />
+              <motion.span
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: 0.7 + i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute -left-[5px] top-2 w-[11px] h-[11px] bg-accent rounded-full"
+              />
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1 + i * 0.1 }}
+              >
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                 <h3 className="font-display font-bold text-2xl md:text-3xl">{job.company}</h3>
                 <span className="font-label text-[11px] uppercase tracking-[0.2em] text-muted">
@@ -56,6 +69,7 @@ export function Experience() {
                   </li>
                 ))}
               </ul>
+              </motion.div>
             </motion.div>
           ))}
         </div>
