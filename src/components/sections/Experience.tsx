@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { resume, sectionVariants } from "@/data/resume";
 import { SectionLabel } from "@/components/SectionLabel";
+import { BgWord } from "@/components/BgWord";
 
 export function Experience() {
   return (
-    <section id="experience" className="px-6 md:px-10 py-32 border-t border-line">
+    <section id="experience" className="relative px-6 md:px-10 py-32 border-t border-line overflow-hidden">
+      <BgWord align="right">WORK</BgWord>
+      <div className="relative z-10">
       <motion.div
         variants={sectionVariants}
         initial="hidden"
@@ -57,6 +60,7 @@ export function Experience() {
           ))}
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }

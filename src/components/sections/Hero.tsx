@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { resume } from "@/data/resume";
 import { ScrollIndicator } from "@/components/ScrollIndicator";
+import { ThinkWord } from "@/components/ThinkWord";
+import { MagneticButton } from "@/components/MagneticButton";
+import { BgWord } from "@/components/BgWord";
 
 const word = {
   hidden: { opacity: 0, y: 40 },
@@ -14,7 +17,9 @@ const container = {
 
 export function Hero() {
   return (
-    <section id="top" className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 pt-24 pb-12">
+    <section id="top" className="relative min-h-screen flex flex-col justify-center px-6 md:px-10 pt-24 pb-12 overflow-hidden">
+      <BgWord align="right">THINK</BgWord>
+      <div className="relative z-10">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -38,7 +43,7 @@ export function Hero() {
         </div>
         <div className="overflow-hidden">
           <motion.span variants={word} className="inline-block">
-            that <span className="text-accent italic">think.</span>
+            that <ThinkWord />
           </motion.span>
         </div>
       </motion.h1>
@@ -58,22 +63,23 @@ export function Hero() {
         transition={{ delay: 1.3, duration: 0.5 }}
         className="mt-10 flex flex-wrap gap-4"
       >
-        <a
+        <MagneticButton
           href="#projects"
-          className="font-label text-[11px] uppercase tracking-[0.2em] bg-accent text-bg px-6 py-4 hover:bg-ink transition-colors duration-200"
+          className="font-label text-[11px] uppercase tracking-[0.2em] bg-accent text-bg px-6 py-4 hover:bg-ink transition-colors duration-200 inline-block"
         >
           View Projects →
-        </a>
-        <a
+        </MagneticButton>
+        <MagneticButton
           href="/RITIK_SAINI.pdf"
           download
-          className="font-label text-[11px] uppercase tracking-[0.2em] border border-ink/30 text-ink px-6 py-4 hover:border-accent hover:text-accent transition-colors duration-200"
+          className="font-label text-[11px] uppercase tracking-[0.2em] border border-ink/30 text-ink px-6 py-4 hover:border-accent hover:text-accent transition-colors duration-200 inline-block"
         >
           Download Resume
-        </a>
+        </MagneticButton>
       </motion.div>
 
       <ScrollIndicator />
+      </div>
     </section>
   );
 }

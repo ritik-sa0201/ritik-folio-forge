@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { resume, sectionVariants } from "@/data/resume";
 import { SectionLabel } from "@/components/SectionLabel";
+import { BgWord } from "@/components/BgWord";
 
 export function Contact() {
   return (
-    <section id="contact" className="px-6 md:px-10 py-32 border-t border-line">
+    <section id="contact" className="relative px-6 md:px-10 py-32 border-t border-line overflow-hidden">
+      <BgWord align="right">CONTACT</BgWord>
+      <div className="relative z-10">
       <SectionLabel index="06" name="Contact" />
       <motion.div
         variants={sectionVariants}
@@ -49,6 +52,7 @@ export function Contact() {
           ))}
         </div>
       </motion.div>
+      </div>
     </section>
   );
 }
