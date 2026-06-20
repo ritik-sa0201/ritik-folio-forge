@@ -26,6 +26,18 @@
   80% { opacity: 1; }
   100% { transform: translateY(100%); opacity: 0; }
 }
+@keyframes grainShift {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-2%, 1%); }
+  40%  { transform: translate(1%, -2%); }
+  60%  { transform: translate(-1%, 2%); }
+  80%  { transform: translate(2%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+@keyframes drawBorderTop    { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes drawBorderRight  { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@keyframes drawBorderBottom { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes drawBorderLeft   { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
 html { scroll-behavior: smooth; background: #0a0a0a; }
 body {
